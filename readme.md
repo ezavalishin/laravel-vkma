@@ -1,10 +1,5 @@
 # VKMA
 
-[![Latest Version on Packagist][ico-version]][link-packagist]
-[![Total Downloads][ico-downloads]][link-downloads]
-[![Build Status][ico-travis]][link-travis]
-[![StyleCI][ico-styleci]][link-styleci]
-
 This is where your description should go. Take a look at [contributing.md](contributing.md) to see a to do list.
 
 ## Installation
@@ -15,7 +10,33 @@ Via Composer
 $ composer require ezavalishin/vkma
 ```
 
+Publish config
+
+``` bash
+$ php artisan vendor:publish --provider="ezavalishin\VKMA\VKMAServiceProvider"
+```
+
 ## Usage
+
+### Authentication
+
+Package provides auth driver `vkma`
+
+You can put it in your `config/auth.php`
+
+```php
+'guards' => [
+    ...
+    'vkma' => [
+        'driver' => 'vkma'
+    ]
+], 
+```
+
+Next you can use middleware `auth:vkma`
+
+
+Guard get or create user in your db by `vk_user_key`
 
 ## Change log
 
@@ -43,15 +64,3 @@ If you discover any security related issues, please email ezavalishin@gmail.com 
 ## License
 
 MIT. Please see the [license file](license.md) for more information.
-
-[ico-version]: https://img.shields.io/packagist/v/ezavalishin/vkma.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/ezavalishin/vkma.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/ezavalishin/vkma/master.svg?style=flat-square
-[ico-styleci]: https://styleci.io/repos/12345678/shield
-
-[link-packagist]: https://packagist.org/packages/ezavalishin/vkma
-[link-downloads]: https://packagist.org/packages/ezavalishin/vkma
-[link-travis]: https://travis-ci.org/ezavalishin/vkma
-[link-styleci]: https://styleci.io/repos/12345678
-[link-author]: https://github.com/ezavalishin
-[link-contributors]: ../../contributors
