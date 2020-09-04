@@ -6,15 +6,18 @@
         {
             "name": "Evgeniy Zavalishin",
             "email": "ezavalishin@gmail.com",
-            "homepage": "ezavalishin.ru"
+            "homepage": "https://ezavalishin.ru"
         }
     ],
     "homepage": "https://github.com/ezavalishin/vkma",
     "keywords": ["Laravel", "VKMA"],
     "require": {
-        "illuminate/support": "~5|~6|~7"
+        "illuminate/support": "~7|~8",
+        "illuminate/http": "~7|~8",
+        "illuminate/database": "~7|~8",
     },
     "require-dev": {
+        "roave/security-advisories": "dev-master",
         "phpunit/phpunit": "^8.0",
         "mockery/mockery": "^1.1",
         "orchestra/testbench": "~3|~4",
