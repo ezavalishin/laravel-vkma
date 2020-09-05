@@ -33,10 +33,21 @@ You can put it in your `config/auth.php`
 ], 
 ```
 
-Next you can use middleware `auth:vkma`
-
-
 Guard get or create user in your db by `vk_user_key`
+
+Next you can use middleware `auth:vkma` and send request with header `Vk-Params` base64 encoded vk launch params
+
+#### Example
+
+```javascript
+let instance = axios.create({
+  headers: {
+    common: {        // can be common or any other method
+      'Vk-Params': btoa(window.location.search.substring(1))
+    }
+  }
+})
+``` 
 
 ## Change log
 
