@@ -7,6 +7,6 @@ return [
 
     'options' => [
         'model' => \App\User::class,
-        'vk_id_key' => 'vk_user_id'
-    ]
+        'vk_id_key' => 'vk_user_id',
+    ],
 ];

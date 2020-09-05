@@ -6,8 +6,7 @@ use ezavalishin\VKMA\VkApiClient\Client;
 use Illuminate\Support\Facades\Facade;
 
 /**
- * Class VKMA
- * @package ezavalishin\VKMA\Facades
+ * Class VKMA.
  *
  * @method static Client getClient
  */

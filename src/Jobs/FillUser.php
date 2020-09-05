@@ -53,11 +53,11 @@ class FillUser implements ShouldQueue
 
     private function parseField($fieldName, $value)
     {
-        if (!isset($value) || empty($value)) {
+        if (! isset($value) || empty($value)) {
             return null;
         }
 
-        $methodName = Str::camel('parse_' . $fieldName);
+        $methodName = Str::camel('parse_'.$fieldName);
 
         if (method_exists($this->model, $methodName)) {
             return $this->model->{$methodName}($value);
@@ -77,7 +77,6 @@ class FillUser implements ShouldQueue
         }
 
         if (preg_match('/\d{1,2}.\d{1,2}/', $value)) {
-
             $date = explode('.', $value);
 
             $bdate = new Carbon();
@@ -87,7 +86,6 @@ class FillUser implements ShouldQueue
             $bdate->setDay($date[0]);
 
             return $bdate;
-
         }
 
         return null;
