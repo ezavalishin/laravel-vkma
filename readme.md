@@ -188,3 +188,9 @@ MIT. Please see the [license file](license.md) for more information.
 [ico-version]: https://img.shields.io/packagist/v/ezavalishin/vkma.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/ezavalishin/vkma.svg?style=flat-square
 [ico-styleci]: https://styleci.io/repos/292890838/shield
+
+[link-packagist]: https://packagist.org/packages/ezavalishin/vkma
+[link-downloads]: https://packagist.org/packages/ezavalishin/vkma
+[link-styleci]: https://styleci.io/repos/292890838
+[link-author]: https://github.com/ezavalishin
+[link-contributors]: ../../contributors
