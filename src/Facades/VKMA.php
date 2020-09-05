@@ -2,8 +2,15 @@
 
 namespace ezavalishin\VKMA\Facades;
 
+use ezavalishin\VKMA\VkApiClient\Client;
 use Illuminate\Support\Facades\Facade;
 
+/**
+ * Class VKMA
+ * @package ezavalishin\VKMA\Facades
+ *
+ * @method static Client getClient
+ */
 class VKMA extends Facade
 {
     /**
