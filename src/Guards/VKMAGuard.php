@@ -21,8 +21,7 @@ class VKMAGuard
         string $vkmaSecret,
         string $model,
         string $vkIdKey
-    )
-    {
+    ) {
         $this->request = $request;
         $this->vkmaSecret = $vkmaSecret;
         $this->model = resolve($model);
@@ -31,19 +30,19 @@ class VKMAGuard
 
     public function user(): ?Model
     {
-        if (!is_null($this->user)) {
+        if (! is_null($this->user)) {
             return $this->user;
         }
 
         $vkParamsHeader = $this->request->header('Vk-Params');
 
-        if (!$vkParamsHeader) {
+        if (! $vkParamsHeader) {
             return null;
         }
 
         parse_str(base64_decode($vkParamsHeader), $paramsUrl);
 
-        if (!$this->validate($paramsUrl)) {
+        if (! $this->validate($paramsUrl)) {
             return null;
         }
 
@@ -54,12 +53,12 @@ class VKMAGuard
     {
         if (Validator::make($credentials, [
             'vk_user_id' => 'required|integer',
-            'sign' => 'required|string'
+            'sign' => 'required|string',
         ])->fails()) {
             return false;
         }
 
-        if (!$this->signIsValid($credentials)) {
+        if (! $this->signIsValid($credentials)) {
             return false;
         }
 
@@ -82,6 +81,7 @@ class VKMAGuard
         /* Формируем строку вида "param_name1=value&param_name2=value"*/
         $signParamsQuery = $usefulParams->map(static function ($value, $key) {
             $value = urlencode($value);
+
             return "{$key}=$value";
         })->join('&');
 
@@ -96,7 +96,7 @@ class VKMAGuard
     private function resolveUser(int $vkUserId): Model
     {
         return $this->model->newQuery()->firstOrCreate([
-            $this->vkIdKey => $vkUserId
+            $this->vkIdKey => $vkUserId,
         ]);
     }
 }

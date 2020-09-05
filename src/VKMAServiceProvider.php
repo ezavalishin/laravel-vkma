@@ -43,7 +43,7 @@ class VKMAServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__ . '/../config/vkma.php', 'vkma');
+        $this->mergeConfigFrom(__DIR__.'/../config/vkma.php', 'vkma');
 
         // Register the service the package provides.
         $this->app->singleton('vkma', static function ($app) {
@@ -74,7 +74,7 @@ class VKMAServiceProvider extends ServiceProvider
     {
         // Publishing the configuration file.
         $this->publishes([
-            __DIR__ . '/../config/vkma.php' => config_path('vkma.php'),
+            __DIR__.'/../config/vkma.php' => config_path('vkma.php'),
         ], 'vkma.config');
 
         // Publishing the views.
