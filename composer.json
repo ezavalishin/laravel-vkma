@@ -17,7 +17,6 @@
         "illuminate/database": "~7|~8",
         "illuminate/bus": "~7|~8",
         "illuminate/contracts": "~7|~8",
-        "illuminate/foundation": "~7|~8",
         "vkcom/vk-php-sdk": "^5.101"
     },
     "require-dev": {
