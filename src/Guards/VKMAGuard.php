@@ -1,6 +1,6 @@
 <?php
 
-namespace ezavalishin\Guards;
+namespace ezavalishin\VKMA\Guards;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
