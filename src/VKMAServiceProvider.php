@@ -2,7 +2,7 @@
 
 namespace ezavalishin\VKMA;
 
-use ezavalishin\Guards\VKMAGuard;
+use ezavalishin\VKMA\Guards\VKMAGuard;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\ServiceProvider;
