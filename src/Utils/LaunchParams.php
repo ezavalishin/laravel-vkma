@@ -34,21 +34,20 @@ class LaunchParams
 
     public static function fromParams(string $params): self
     {
-
         parse_str(base64_decode($params), $result);
 
         $accessTokenSettings = explode(',', $result['vk_access_token_settings']);
-        $appId = (int)$result['vk_app_id'];
-        $areNotificationsEnabled = (bool)$result['vk_are_notifications_enabled'];
-        $isAppUser = (bool)$result['vk_is_app_user'];
-        $isFavourite = (bool)$result['vk_is_favorite'];
+        $appId = (int) $result['vk_app_id'];
+        $areNotificationsEnabled = (bool) $result['vk_are_notifications_enabled'];
+        $isAppUser = (bool) $result['vk_is_app_user'];
+        $isFavourite = (bool) $result['vk_is_favorite'];
         $lang = $result['vk_language'];
         $platform = $result['vk_platform'];
         $ref = $result['vk_ref'];
-        $userId = (int)$result['vk_user_id'];
+        $userId = (int) $result['vk_user_id'];
 
-        $groupId = isset($result['vk_group_id']) ? (int)$result['vk_group_id'] : null;
-        $role = isset($result->vk_viewer_group_role) ? (int)$result['vk_viewer_group_role'] : null;
+        $groupId = isset($result['vk_group_id']) ? (int) $result['vk_group_id'] : null;
+        $role = isset($result->vk_viewer_group_role) ? (int) $result['vk_viewer_group_role'] : null;
 
         return new LaunchParams(
             $accessTokenSettings,
@@ -152,7 +151,6 @@ class LaunchParams
     {
         return $this->viewerGroupRole;
     }
-
 
     public function roleIsNone(): bool
     {
