@@ -47,7 +47,7 @@ class LaunchParams
         $userId = (int) $result['vk_user_id'];
 
         $groupId = isset($result['vk_group_id']) ? (int) $result['vk_group_id'] : null;
-        $role = isset($result->vk_viewer_group_role) ? (int) $result['vk_viewer_group_role'] : null;
+        $role = isset($result['vk_viewer_group_role']) ? (int) $result['vk_viewer_group_role'] : null;
 
         return new LaunchParams(
             $accessTokenSettings,
