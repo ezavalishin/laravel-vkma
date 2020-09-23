@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Facade;
  * Class VKMA.
  *
  * @method static Client getClient
- * @method static LaunchParams launchParams
+ * @method static LaunchParams|null launchParams
  */
 class VKMA extends Facade
 {

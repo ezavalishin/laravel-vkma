@@ -11,13 +11,18 @@ class VKMA
     protected Client $client;
     protected Request $request;
 
-    private static LaunchParams $launchParams;
+    private static ?LaunchParams $launchParams = null;
 
     public function __construct(int $appId, string $serviceKey, string $locale, Request $request)
     {
         $this->client = new Client($appId, $serviceKey, $locale);
 
-        self::$launchParams = LaunchParams::fromParams($request->header('Vk-Params'));
+        if ($header = $request->header('Vk-Params')) {
+            try {
+                self::$launchParams = LaunchParams::fromParams($header);
+            } catch (\Exception $e) {
+            }
+        }
     }
 
     public function getClient(): Client
@@ -25,7 +30,7 @@ class VKMA
         return $this->client;
     }
 
-    public function launchParams(): LaunchParams
+    public function launchParams(): ?LaunchParams
     {
         return self::$launchParams;
     }
