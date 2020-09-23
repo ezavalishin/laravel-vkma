@@ -50,7 +50,8 @@ class VKMAServiceProvider extends ServiceProvider
             return new VKMA(
                 config('vkma.app_id'),
                 config('vkma.service_key'),
-                config('app.locale')
+                config('app.locale'),
+                $app->request
             );
         });
     }
